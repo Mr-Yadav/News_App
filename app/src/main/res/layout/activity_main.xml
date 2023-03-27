@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_bg"
+    tools:context=".MainActivity">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pagerid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec"
+        android:layout_width="420dp"
+        android:layout_height="576dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <HorizontalScrollView
+        android:layout_width="401dp"
+        android:layout_height="68dp"
+        android:background="#FFFAFA"
+        android:foregroundGravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/rec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/sports"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+
+                android:text="Sports"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.668"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/business"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+
+                android:text="business"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.668"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/Technology"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Technology"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.668"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/Science"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Science"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.668"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/Entertainment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="entertainment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.668"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <ImageView
+        android:id="@+id/home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/home_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/msg"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rec"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/user"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/se_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rec"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ImageView
+        android:id="@+id/msg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/user"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rec"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_message_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
