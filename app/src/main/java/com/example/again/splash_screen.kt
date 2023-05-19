@@ -11,6 +11,7 @@ import com.example.again.databinding.ActivitySplashScreenBinding
 class splash_screen : AppCompatActivity() {
     lateinit var binding2: ActivitySplashScreenBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding2 = ActivitySplashScreenBinding.inflate(layoutInflater)

@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -19,14 +21,19 @@ class layoutAdapter(val articles: List<Article> , val context: Context) : Recycl
 
         val pics : ImageView = itemView.findViewById(R.id.pic)
 
-    //    val title :  TextView = itemView.findViewById(R.id.title)
+        val shaare : ImageView = itemView.findViewById(R.id.share)
+        val likee : ImageView = itemView.findViewById(R.id.like)
+        val reaad : ImageView = itemView.findViewById(R.id.addlist)
 
-        val b : TextView = itemView.findViewById(R.id.textid)
+
+        //    val title :  TextView = itemView.findViewById(R.id.title)
+
+        val bik : TextView = itemView.findViewById(R.id.textid)
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.layout_resouce,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.bkc,parent,false)
 
         return ViewHolder(view)
     }
@@ -36,9 +43,9 @@ class layoutAdapter(val articles: List<Article> , val context: Context) : Recycl
         val curr = articles[position]
 
 
-        holder.b.text = curr.title
-        //holder.title.text = curr.author
+        holder.bik.text = curr.title
 
+        //holder.title.text = curr.author
 
 
         if(curr.urlToImage!=null){
@@ -54,31 +61,42 @@ class layoutAdapter(val articles: List<Article> , val context: Context) : Recycl
 
 
 
-
-        holder.itemView.setOnClickListener {
-
-        //    Toast.makeText(context,curr.description,Toast.LENGTH_SHORT).show()
-
+        holder.pics.setOnClickListener {
             val builder = CustomTabsIntent.Builder()
             val customTabsIntent = builder.build()
             customTabsIntent.launchUrl(context, Uri.parse(curr.url))
+        }
+
+        holder.likee.setOnClickListener {
+
+            holder.likee.setImageResource(R.drawable.heart_24)
+
+        }
+
+        holder.shaare.setOnClickListener{
 
 
+            shareText(curr.url,context)
 
+        }
 
+        holder.reaad.setOnClickListener{
 
-
-
-//            val intent = Intent(context,detail_activity::class.java)
-//
-//            intent.putExtra("URL" , curr.url)
-//
-//            context.startActivity(intent)
+            Toast.makeText(context, "Added To Reading Later", Toast.LENGTH_SHORT).show()
 
 
         }
 
 
+
+
+    }
+
+    private fun shareText(text: String, context: Context) {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, text)
+        context.startActivity(Intent.createChooser(intent, "Share via"))
     }
 
     override fun getItemCount(): Int {
